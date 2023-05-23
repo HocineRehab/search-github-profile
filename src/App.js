@@ -47,63 +47,62 @@ function GithubProfileSearch() {
   };
   console.log(searchResults);
   return (
-    <main className={`container ${darkText ? 'dark-text' : ''}`}>
+    <div className={`container ${darkText ? 'dark-text' : ''}`}>
       <h1>Github Profile Search</h1>
       <h2>Search for Github users and view their profile information</h2>
       <h3>Enter a Github username below to get started</h3>
 
-      <div className={`container ${darkText ? 'dark-text' : ''}`}>
-        <div className="input-wrapper">
-          <input
-            type="text"
-            placeholder="Enter a Github username"
-            value={username}
-            onChange={e => setUsername(e.target.value)}
-            onKeyPress={handleKeyPress}
-          />
-          <button onClick={handleSearch}>&ensp; &ensp;Search &ensp;&ensp;</button>
-        </div>
+      <div className="input-wrapper">
+        <input
+          type="text"
+          placeholder="Enter a Github username"
+          value={username}
+          onChange={e => setUsername(e.target.value)}
+          onKeyPress={handleKeyPress}
+        />
+        <button onClick={handleSearch}>&ensp; &ensp;Search &ensp;&ensp;</button>
+      </div>
 
-        <ul>
-          {searchResults.map(result => (
-            <li className="card-body" key={result.id}>
-              <div className="card-ligne one">
-                <a href={result.html_url} target="_blank" rel="noopener noreferrer nofollow">
-                  {result.login}
-                </a>
-              </div>
-              <div className="card-ligne">
-                <a href={result.html_url} target="_blank" rel="noopener noreferrer nofollow">
-                  {result.type}
-                </a>
-              </div>
-              <div className="card-ligne">
-                {/* afficher les followers des 10 premiers resultats */}
-                <a href={result.followers_url} target="_blank" rel="noopener noreferrer nofollow">
-                  {result.followers}  followers {followersCount}
+      <ul>
+        {searchResults.map(result => (
+          <li className="card-body" key={result.id}>
+            <div className="card-ligne one">
+              <a href={result.html_url} target="_blank" rel="noopener noreferrer nofollow">
+                {result.login}
+              </a>
+            </div>
+            <div className="card-ligne center">
+              <a href={result.html_url} target="_blank" rel="noopener noreferrer nofollow">
+                {result.type}
+              </a>
+            </div>
+            <div className="card-ligne center">
+              {/* afficher les followers des 10 premiers resultats */}
+              <a href={result.followers_url} target="_blank" rel="noopener noreferrer nofollow">
+                {result.followers}  followers {followersCount}
 
-                </a>
-              </div>
-              <div className="card-ligne foor">
-                <a href={result.html_url} target="_blank" rel="noopener noreferrer nofollow">
-                  <img src={result.avatar_url} alt={result.login} />
-                </a>
-              </div>
-            </li>
-          ))}
-        </ul>
+              </a>
+            </div>
+            <div className="card-ligne foor">
+              <a href={result.html_url} target="_blank" rel="noopener noreferrer nofollow">
+                <img src={result.avatar_url} alt={result.login} />
+              </a>
+            </div>
+          </li>
+        ))}
+      </ul>
 
-        <div className="input-darkText" >
-          <button className="input-darkText" onClick={toggleDarkText}>
-            {darkText ? 'Text Color' : 'Text Color'}
-          </button>
-        </div>
+      {/* bouton de switch de couleur du text */}
+      <div className="input-darkText" >
+        <button className="input-darkText" onClick={toggleDarkText}>
+          {darkText ? 'Switch to  BlueText' : ' Switch to Dark Text'}
+        </button>
+      </div>
 
-      </div >
       <footer>
         <p>© 2021 Created by Hocine <a href="https://github.com/HocineRehab" target='_blank' rel="noopener noreferrer nofollow">@WisdomFace</a></p>
       </footer>
-    </main>
+    </div>
   );
 }
 
