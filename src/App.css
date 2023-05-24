@@ -1,6 +1,6 @@
 body {
   background-color: #e5dbdb;
-  color: #007bff;
+  color: #618871;
 }
 
 .container {
@@ -33,7 +33,7 @@ body {
 .input-wrapper button,
 .input-darkText button {
   padding: 05px 10px;
-  background-color: #007bff;
+  background-color: #618871;
   color: #fff;
   border: none;
   font-size: 16px;
@@ -43,7 +43,8 @@ body {
 }
 
 .input-darkText button {
-  margin-top: 1.5em;
+  margin-top: 0.5em;
+  padding: auto;
 }
 
 .input-wrapper button:hover,
@@ -90,7 +91,7 @@ ul li a {
 }
 
 ul li a:hover {
-  color: #007bff;
+  color: #618871;
 }
 
 li.card-body {
@@ -148,7 +149,7 @@ footer a:hover {
 
 /* couleur du placeholder */
 ::placeholder {
-  color: #007bff;
+  color: #618871;
   opacity: 1;
 }
 
@@ -175,6 +176,10 @@ footer a:hover {
   .input-wrapper button {
     padding: auto 8px;
     font-size: 8px;
+  }
+
+  .card-ligne.follow {
+    display: none;
   }
 }
 
